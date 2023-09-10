@@ -1,25 +1,50 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33213.308
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChyProgect", "ChyProgect\ChyProgect.csproj", "{AEA403A6-701D-46E0-A405-A935DF87C115}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AEA403A6-701D-46E0-A405-A935DF87C115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEA403A6-701D-46E0-A405-A935DF87C115}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEA403A6-701D-46E0-A405-A935DF87C115}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEA403A6-701D-46E0-A405-A935DF87C115}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3D2DEB41-1218-457F-984E-76775494E5D1}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char name = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Ваш символ: " + name);
+            bool isDigit = char.IsDigit(name);
+            bool IsWhiteSpace = char.IsWhiteSpace(name);
+            bool IsLower = char.IsLower(name);
+            bool IsUpper = char.IsUpper(name);
+            bool IsPunctuation = char.IsPunctuation(name);
+            bool IsControl = char.IsControl(name);
+            if (isDigit == true)
+            {
+                Console.WriteLine("Ваше число попадает в промежуток от 0 до 9");
+            }
+            if (IsWhiteSpace == true)
+            {
+                Console.WriteLine("Это символ из категории пробельных");
+            }
+            if (IsLower == true)
+            {
+                Console.WriteLine("Это символ из категории букв в нижнем регистре");
+            }
+            if (IsUpper == true)
+            {
+                Console.WriteLine("Это символ из категории букв в верхнем регистре");
+            }
+            if (IsPunctuation)
+            {
+                Console.WriteLine("Это символ из категории знаков препинания");
+            }
+            if (IsControl)
+            {
+                Console.WriteLine("Это символ из категории управляющих символов");
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
